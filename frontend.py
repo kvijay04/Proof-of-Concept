@@ -1,10 +1,6 @@
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
-from kivy.uix.image import Image
-from kivy.uix.button import Button
-from kivy.uix.textinput import TextInput
-
 from backend import log_reg
 
 # Code from https://www.youtube.com/watch?v=YDp73WjNISc&ab_channel=PythonSimplified
@@ -13,8 +9,9 @@ class Frontend(App):
     def build(self):
         self.window = GridLayout()
         
-        #add widgets to window
+        #Using backend code in frontend by simply importing functions from the backend file
         displayText = log_reg()
+        
         self.greeting = Label(text=f"{displayText}")
         self.window.add_widget(self.greeting)
         
